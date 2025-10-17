@@ -1,4 +1,4 @@
-# Minimal SQL
+# Krivi SQL
 
 This is just a fun pet project without any intension to being used
 
