@@ -7,35 +7,38 @@
 #define EMPTY_STR "Empty String"
 #define NOT_EMPTY_STR "Non Empty String"
 
-// int test_tokenize_base_case()
-// {
+TestResult *test_tokenize_base_case()
+{
+    char* string = "Test Test A B";
+    char **tokens = tokenize(string);
+    char **expected = {"test", "test", "a", "b"};
+    
+}
 
-// }
+TestResult *test_tokenize_base_special_chars_case()
+{
 
-// int test_tokenize_base_special_chars_case()
-// {
+}
 
-// }
+TestResult *test_tokenize_empty_case()
+{
 
-// int test_tokenize_empty_case()
-// {
+}
 
-// }
+TestResult *test_tokenize_null_case()
+{
 
-// int test_tokenize_null_case()
-// {
+}
 
-// }
+TestResult *test_tokenize_single_token_case()
+{
 
-// int test_tokenize_single_token_case()
-// {
+}
 
-// }
+TestResult *test_tokenize_single_too_long_case()
+{
 
-// int test_tokenize_single_too_long_case()
-// {
-
-// }
+}
 
 TestResult *test_clean_spaces_space_case()
 {

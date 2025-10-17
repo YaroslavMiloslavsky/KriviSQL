@@ -11,5 +11,5 @@
 
 int isBlank(const char *);
 char *trim(char *);
-char *tokenize(char *);
+char **tokenize(char *);
 #endif

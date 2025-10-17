@@ -45,7 +45,7 @@ char *trim(char *string)
     return empty;
 }
 
-char *tokenize(char *string)
+char **tokenize(char *string)
 {
     return NULL;
 }
