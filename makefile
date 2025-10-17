@@ -19,20 +19,20 @@ endif
 $(EXECUTABLE) : main.o helper.o command.o
 	$(CCDEBUG) $(CFLAGS) command.o helper.o main.o -o $(EXECUTABLE)
 
-main.o : src/main.c header/global.h header/helper.h header/test.h 
+main.o : src/main.c header/global.h header/helper.h
 	$(CCCOMIPLE) $(CFLAGS) $(HEADERS) src/main.c -o main.o
 
 $(TESTEXEC) : test.o helper.o command.o test_helper.o test_util.o
 	$(CCDEBUG) $(CFLAGS) test_util.o command.o helper.o test_helper.o test.o -o $(TESTEXEC)
 
-test.o: src/test.c header/test.h header/global.h header/helper.h 
-	$(CCCOMIPLE) $(CFLAGS) $(HEADERS) src/test.c -o test.o
+test.o: test/test.c test/header/test.h header/global.h header/helper.h 
+	$(CCCOMIPLE) $(CFLAGS) $(HEADERS) test/test.c -o test.o
 
-test_helper.o : src/test_helper.c header/test_helper.h header/test_util.h
-	$(CCCOMIPLE) $(CFLAGS) $(HEADERS) src/test_helper.c -o test_helper.o
+test_helper.o : test/test_helper.c test/header/test_helper.h test/header/test_util.h
+	$(CCCOMIPLE) $(CFLAGS) $(HEADERS) test/test_helper.c -o test_helper.o
 
-test_util.o : src/test_util.c header/test_util.h
-	$(CCCOMIPLE) $(CFLAGS) $(HEADERS) src/test_util.c -o test_util.o
+test_util.o : test/test_util.c test/header/test_util.h
+	$(CCCOMIPLE) $(CFLAGS) $(HEADERS) test/test_util.c -o test_util.o
 
 helper.o: src/helper.c header/helper.h
 	$(CCCOMIPLE) $(CFLAGS) $(HEADERS) src/helper.c -o helper.o

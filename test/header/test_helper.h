@@ -25,10 +25,10 @@ TestResult *test_clean_spaces_space_case();
 
 // tokenize
 TestResult *test_tokenize_base_case();
-TestResult *test_tokenize_base_special_chars_case();
-TestResult *test_tokenize_empty_case();
-TestResult *test_tokenize_null_case();
-TestResult *test_tokenize_single_token_case();
-TestResult *test_tokenize_single_too_long_case();
+// TestResult *test_tokenize_base_special_chars_case();
+// TestResult *test_tokenize_empty_case();
+// TestResult *test_tokenize_null_case();
+// TestResult *test_tokenize_single_token_case();
+// TestResult *test_tokenize_single_too_long_case();
 
 #endif

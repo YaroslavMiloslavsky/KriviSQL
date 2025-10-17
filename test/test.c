@@ -1,5 +1,5 @@
-#include "test.h"
-#include "test_helper.h"
+#include "header/test.h"
+#include "header/test_helper.h"
 
 void print_test_statement(int passed, const char *TEST_NAME);
 
@@ -38,11 +38,11 @@ static TestingFramework testFramework[] =
         {"test_clean_spaces_tab_case", test_clean_spaces_tab_case},
         {"test_clean_spaces_space_case", test_clean_spaces_space_case},
         {"test_tokenize_base_case", test_tokenize_base_case},
-        {"test_tokenize_base_special_chars_case", test_tokenize_base_special_chars_case},
-        {"test_tokenize_empty_case", test_tokenize_empty_case},
-        {"test_tokenize_null_case", test_tokenize_null_case},
-        {"test_tokenize_single_token_case", test_tokenize_single_token_case},
-        {"test_tokenize_single_too_long_case", test_tokenize_single_too_long_case},
+        // {"test_tokenize_base_special_chars_case", test_tokenize_base_special_chars_case},
+        // {"test_tokenize_empty_case", test_tokenize_empty_case},
+        // {"test_tokenize_null_case", test_tokenize_null_case},
+        // {"test_tokenize_single_token_case", test_tokenize_single_token_case},
+        // {"test_tokenize_single_too_long_case", test_tokenize_single_too_long_case},
         {NULL, NULL}};
 
 int unit_test()

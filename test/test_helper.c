@@ -3,7 +3,7 @@
  * Class to test the helper.h/c methods
  */
 
-#include "test_helper.h"
+#include "header/test_helper.h"
 #define EMPTY_STR "Empty String"
 #define NOT_EMPTY_STR "Non Empty String"
 
@@ -15,30 +15,30 @@ TestResult *test_tokenize_base_case()
     
 }
 
-TestResult *test_tokenize_base_special_chars_case()
-{
+// TestResult *test_tokenize_base_special_chars_case()
+// {
 
-}
+// }
 
-TestResult *test_tokenize_empty_case()
-{
+// TestResult *test_tokenize_empty_case()
+// {
 
-}
+// }
 
-TestResult *test_tokenize_null_case()
-{
+// TestResult *test_tokenize_null_case()
+// {
 
-}
+// }
 
-TestResult *test_tokenize_single_token_case()
-{
+// TestResult *test_tokenize_single_token_case()
+// {
 
-}
+// }
 
-TestResult *test_tokenize_single_too_long_case()
-{
+// TestResult *test_tokenize_single_too_long_case()
+// {
 
-}
+// }
 
 TestResult *test_clean_spaces_space_case()
 {
