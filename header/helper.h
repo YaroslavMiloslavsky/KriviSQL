@@ -9,7 +9,7 @@
 
 #define CONTROL_CHARS_END 31
 
-int isBlank(const char*);
-char* trim(char*);
-char* tokenize(char*);
+int isBlank(const char *);
+char *trim(char *);
+char *tokenize(char *);
 #endif

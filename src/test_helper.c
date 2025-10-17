@@ -1,102 +1,186 @@
+/**
+ * test_helper
+ * Class to test the helper.h/c methods
+ */
+
 #include "test_helper.h"
+#define EMPTY_STR "Empty String"
+#define NOT_EMPTY_STR "Non Empty String"
 
-int test_clean_spaces_space_case()
+// int test_tokenize_base_case()
+// {
+
+// }
+
+// int test_tokenize_base_special_chars_case()
+// {
+
+// }
+
+// int test_tokenize_empty_case()
+// {
+
+// }
+
+// int test_tokenize_null_case()
+// {
+
+// }
+
+// int test_tokenize_single_token_case()
+// {
+
+// }
+
+// int test_tokenize_single_too_long_case()
+// {
+
+// }
+
+TestResult *test_clean_spaces_space_case()
 {
-    char* cleaned = trim(" ");
+    char *cleaned = trim(" ");
     int result = ((cleaned[0]) == '\0') ? 1 : 0;
     free(cleaned);
-    return result;
+    return createResult(
+        EMPTY_STR,
+        result == 1 ? EMPTY_STR : NOT_EMPTY_STR,
+        "",
+        result);
 }
 
-int test_clean_spaces_tab_case()
+TestResult *test_clean_spaces_tab_case()
 {
-    char* cleaned = trim("\t");
+    char *cleaned = trim("\t");
     int result = ((cleaned[0]) == '\0') ? 1 : 0;
     free(cleaned);
-    return result;
+    return createResult(
+        EMPTY_STR,
+        result == 1 ? EMPTY_STR : NOT_EMPTY_STR,
+        "",
+        result);
 }
 
-int test_clean_spaces_carriage_case()
+TestResult *test_clean_spaces_carriage_case()
 {
-    char* cleaned = trim("\r");
+    char *cleaned = trim("\r");
     int result = ((cleaned[0]) == '\0') ? 1 : 0;
     free(cleaned);
-    return result;
+    return createResult(
+        EMPTY_STR,
+        result == 1 ? EMPTY_STR : NOT_EMPTY_STR,
+        "",
+        result);
 }
 
-int test_clean_spaces_new_line_case()
+TestResult *test_clean_spaces_new_line_case()
 {
-    char* cleaned = trim("\n");
+    char *cleaned = trim("\n");
     int result = ((cleaned[0]) == '\0') ? 1 : 0;
     free(cleaned);
-    return result;
+    return createResult(
+        EMPTY_STR,
+        result == 1 ? EMPTY_STR : NOT_EMPTY_STR,
+        "",
+        result);
 }
 
-int test_clean_spaces_null_case()
+TestResult *test_clean_spaces_null_case()
 {
-    char* cleaned = trim("");
+    char *cleaned = trim("");
     int result = ((cleaned[0]) == '\0') ? 1 : 0;
     free(cleaned);
-    return result;
+    return createResult(
+        EMPTY_STR,
+        result == 1 ? EMPTY_STR : NOT_EMPTY_STR,
+        "",
+        result);
 }
 
-int test_clean_spaces_non_spaces_case()
+TestResult *test_clean_spaces_non_spaces_case()
 {
     char notCleaned[BUFF_SIZE] = "Test";
     char expected[BUFF_SIZE] = "Test";
-    char* cleaned = trim(notCleaned);
+    char *cleaned = trim(notCleaned);
     int result = (strcmp(cleaned, expected) == 0) ? 1 : 0;
+    TestResult *testRes = createResult(
+        expected,
+        cleaned,
+        "",
+        result);
     free(cleaned);
-    return result;
+    return testRes;
 }
 
-int test_clean_spaces_both_ends_case()
+TestResult *test_clean_spaces_both_ends_case()
 {
     char notCleaned[BUFF_SIZE] = "\nTest\n";
-    char* cleaned = trim(notCleaned);
+    char *cleaned = trim(notCleaned);
     int result = ((cleaned[0]) == '\0') ? 1 : 0;
     free(cleaned);
-    return result;
+    return createResult(
+        EMPTY_STR,
+        result == 1 ? EMPTY_STR : NOT_EMPTY_STR,
+        "",
+        result);
 }
 
-int test_clean_spaces_blank_first_case()
+TestResult *test_clean_spaces_blank_first_case()
 {
     char notCleaned[BUFF_SIZE] = "\nTest";
-    char* cleaned = trim(notCleaned);
+    char *cleaned = trim(notCleaned);
     int result = ((cleaned[0]) == '\0') ? 1 : 0;
     free(cleaned);
-    return result;
+    return createResult(
+        EMPTY_STR,
+        result == 1 ? EMPTY_STR : NOT_EMPTY_STR,
+        "",
+        result);
 }
 
-int test_clean_spaces_trailing_base_case()
+TestResult *test_clean_spaces_trailing_base_case()
 {
     char notCleaned[BUFF_SIZE] = "Test\n";
     char expected[BUFF_SIZE] = "Test";
-    char* cleaned = trim(notCleaned);
+    char *cleaned = trim(notCleaned);
     int result = (strcmp(cleaned, expected) == 0) ? 1 : 0;
+    TestResult *testRes = createResult(
+        expected,
+        cleaned,
+        "",
+        result);
     free(cleaned);
-    return result;
+    return testRes;
 }
 
-int test_is_blank_null_case()
+TestResult *test_is_blank_null_case()
 {
-    int result = 0;
-    result = isBlank(NULL);
-    return result;
+    int result = isBlank(NULL);
+    return createResult(
+        "1",
+        result == 1 ? "1" : "0",
+        "",
+        result);
 }
 
-int test_is_blank_non_empty_case()
+TestResult *test_is_blank_non_empty_case()
 {
-    int result = 0;
     char empty[BUFF_SIZE] = "Hello Test";
-    result = isBlank(empty);
-    return !result;
+    int result = !isBlank(empty);
+    return createResult(
+        "1",
+        result == 1 ? "1" : "0",
+        "",
+        result);
 }
 
-int test_is_blank_base_case() 
+TestResult *test_is_blank_base_case()
 {
-    int result = 0;
     char empty[BUFF_SIZE] = {0};
-    result = isBlank(empty);
-    return result;
+    int result = isBlank(empty);
+    return createResult(
+        "1",
+        result == 1 ? "1" : "0",
+        "",
+        result);
 }

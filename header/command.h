@@ -7,7 +7,7 @@
 #include "global.h"
 #include "helper.h"
 
-typedef struct command_response
+typedef struct commandResponse
 {
     int code;
 } CommandResponse;
@@ -16,6 +16,6 @@ typedef struct command_response
  * Returns a code for action
  * -1 - EXIT
  */
-CommandResponse* parseCommand(char* COMMAND);
+CommandResponse *parseCommand(char *COMMAND);
 
 #endif

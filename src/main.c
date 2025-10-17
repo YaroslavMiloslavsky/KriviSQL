@@ -1,25 +1,27 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
 
 #include "global.h"
 #include "helper.h"
 #include "command.h"
 #include "enums.h"
 
-int main() 
+int main()
 {
-    printf(" ---------- Welcome to Minimal SQL version %0.2f ----------\n", VERSION);
+    printf(" ---------- Welcome to Krivi SQL version %0.2f ----------\n", VERSION);
 
     char buffer[BUFF_SIZE] = {0};
     memset(buffer, '\0', sizeof(buffer));
     int commandCode = 0;
-    do {
+    do
+    {
         printf(PLOMBY);
-        if (!isBlank(buffer)) {
-            CommandResponse* command = parseCommand(buffer);
+        if (!isBlank(buffer))
+        {
+            CommandResponse *command = parseCommand(buffer);
             if (command != NULL)
             {
-                commandCode = command -> code;
+                commandCode = command->code;
                 memset(buffer, '\0', sizeof(buffer));
                 free(command);
             }
